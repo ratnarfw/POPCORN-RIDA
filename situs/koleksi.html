@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Telusuri koleksi digital Perpustakaan Digital NTT — buku, jurnal, laporan penelitian, dokumen kebijakan, dan karya inovasi daerah." />
+  <meta name="theme-color" content="#2f5d50" />
+  <title>Koleksi Digital — POPCORN RIDA Pondok Pustaka Corner Riset dan Inovasi Daerah</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,600&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
+  <div id="site-header"></div>
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Beranda</a></li>
+        <li>Koleksi Digital</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="page-header" id="main-content" tabindex="-1">
+    <div class="container">
+      <h1>Koleksi Digital</h1>
+      <p>Telusuri ribuan dokumen pengetahuan tentang Nusa Tenggara Timur — riset, jurnal, buku, laporan kebijakan, hingga karya inovasi daerah.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="koleksi-page-layout">
+      <!-- Sidebar filter -->
+      <aside class="filter-sidebar" id="filter-sidebar" aria-label="Filter koleksi">
+        <h3>Filter Koleksi</h3>
+        <form id="filter-form" onsubmit="return false;">
+          <div class="filter-group">
+            <label for="filter-q">Kata Kunci</label>
+            <input type="text" id="filter-q" name="q" placeholder="Cari judul, penulis, abstrak..." autocomplete="off" />
+          </div>
+          <div class="filter-group">
+            <label for="filter-kategori">Kategori</label>
+            <select id="filter-kategori" name="kategori">
+              <option value="">Semua Kategori</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-jenis">Jenis Dokumen</label>
+            <select id="filter-jenis" name="jenis">
+              <option value="">Semua Jenis</option>
+              <option value="Buku">Buku</option>
+              <option value="Jurnal">Jurnal</option>
+              <option value="Laporan Penelitian">Laporan Penelitian</option>
+              <option value="Laporan Kebijakan">Laporan Kebijakan</option>
+              <option value="Skripsi/Tesis">Skripsi/Tesis</option>
+              <option value="Prosiding">Prosiding</option>
+              <option value="E-Book">E-Book</option>
+              <option value="Dokumen Daerah">Dokumen Daerah</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-tahun">Tahun Terbit</label>
+            <select id="filter-tahun" name="tahun">
+              <option value="">Semua Tahun</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-akses">Status Akses</label>
+            <select id="filter-akses" name="akses">
+              <option value="">Semua Akses</option>
+              <option value="Publik">Publik — Bebas Diunduh</option>
+              <option value="Internal">Internal — Untuk Pemangku Instansi</option>
+              <option value="Privat">Privat — Hubungi Admin</option>
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <button type="button" class="btn btn-primary btn-block" id="btn-apply-filter">Terapkan Filter</button>
+            <button type="button" class="btn btn-ghost btn-block" id="btn-reset-filter">Reset Filter</button>
+          </div>
+        </form>
+      </aside>
+
+      <!-- Hasil -->
+      <section class="koleksi-results" aria-live="polite">
+        <div class="results-toolbar">
+          <div class="rt-info" id="results-info">Memuat koleksi…</div>
+          <div class="rt-sort">
+            <label for="sort-select" style="font-size:0.82rem;color:var(--c-text-muted);">Urutkan:</label>
+            <select id="sort-select">
+              <option value="terbaru">Terbaru diunggah</option>
+              <option value="terlama">Terlama diunggah</option>
+              <option value="judul_az">Judul (A → Z)</option>
+              <option value="judul_za">Judul (Z → A)</option>
+              <option value="tahun_terbaru">Tahun Terbaru</option>
+              <option value="tahun_terlama">Tahun Terlama</option>
+            </select>
+          </div>
+        </div>
+        <div class="koleksi-grid" id="koleksi-grid">
+          <!-- dirender oleh koleksi.js -->
+        </div>
+        <div class="pagination" id="pagination"></div>
+      </section>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/koleksi.js"></script>
+</body>
+</html>

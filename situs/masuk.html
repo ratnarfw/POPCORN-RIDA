@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Masuk atau daftar akun gratis Perpustakaan Digital NTT untuk menyimpan koleksi favorit dan riwayat bacaan." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#2f5d50" />
+  <title>Masuk / Daftar — POPCORN RIDA Pondok Pustaka Corner Riset dan Inovasi Daerah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,600&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <script src="assets/js/theme.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
+  <div id="site-header"></div>
+
+  <main id="main-content" class="auth-wrap" tabindex="-1">
+    <div class="auth-shell">
+
+      <aside class="auth-art" aria-hidden="false">
+        <div>
+          <h2>Selamat datang di rumah baca Anda</h2>
+          <p>Satu akun untuk menyimpan bacaan, kembali ke dokumen yang tadi dibuka, dan membaca dengan nyaman di mode malam.</p>
+        </div>
+        <img src="assets/img/hero-perpus.svg" alt="" width="330" height="270" />
+        <ul>
+          <li>Gratis untuk seluruh warga</li>
+          <li>Rak favorit &amp; riwayat baca pribadi</li>
+          <li>Administrator masuk lewat halaman yang sama</li>
+        </ul>
+      </aside>
+
+      <section class="auth-card" aria-label="Masuk atau daftar">
+        <div class="auth-tabs" role="tablist" id="auth-tabs">
+          <button type="button" role="tab" id="tab-masuk" data-tab="masuk" aria-controls="panel-masuk" aria-selected="true" class="active">Masuk</button>
+          <button type="button" role="tab" id="tab-daftar" data-tab="daftar" aria-controls="panel-daftar" aria-selected="false">Daftar</button>
+        </div>
+
+        <!-- ===== MASUK ===== -->
+        <div class="auth-panel" id="panel-masuk" role="tabpanel" aria-labelledby="tab-masuk">
+          <h1>Masuk</h1>
+          <p class="sub">Gunakan email dan kata sandi akun Anda.</p>
+          <div class="alert error" id="login-alert" role="alert" hidden></div>
+          <form id="login-form" novalidate>
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" autocomplete="username" placeholder="nama@email.com" required />
+              <div class="error-msg" id="login-email-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Kata sandi</label>
+              <div class="pw-wrap">
+                <input type="password" id="login-password" autocomplete="current-password" placeholder="••••••••" required />
+                <button type="button" class="show-pw" data-toggle-pw="login-password" aria-label="Tampilkan kata sandi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+              </div>
+              <div class="error-msg" id="login-password-error"></div>
+            </div>
+            <div class="auth-links">
+              <span class="check-row"><input type="checkbox" id="login-ingat" /><label for="login-ingat">Ingat saya di perangkat ini</label></span>
+              <button type="button" class="link-btn" data-go="lupa">Lupa kata sandi?</button>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="btn-login">Masuk</button>
+          </form>
+          <div class="auth-foot">Belum punya akun? <button type="button" class="link-btn" data-go="daftar">Daftar gratis</button></div>
+        </div>
+
+        <!-- ===== DAFTAR ===== -->
+        <div class="auth-panel" id="panel-daftar" role="tabpanel" aria-labelledby="tab-daftar" hidden>
+          <h1>Buat akun gratis</h1>
+          <p class="sub">Cukup satu menit. Tidak ada biaya.</p>
+          <div class="alert error" id="reg-alert" role="alert" hidden></div>
+          <form id="reg-form" novalidate>
+            <div class="form-group">
+              <label for="reg-nama">Nama lengkap <span class="req">*</span></label>
+              <input type="text" id="reg-nama" autocomplete="name" placeholder="Nama Anda" maxlength="100" required />
+              <div class="error-msg" id="reg-nama-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="reg-email">Email <span class="req">*</span></label>
+              <input type="email" id="reg-email" autocomplete="email" placeholder="nama@email.com" required />
+              <div class="error-msg" id="reg-email-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="reg-instansi">Instansi / sekolah <span class="text-muted" style="font-weight:600;">(opsional)</span></label>
+              <input type="text" id="reg-instansi" autocomplete="organization" placeholder="Mis. SMA Negeri 1 Kupang" maxlength="150" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-password">Kata sandi <span class="req">*</span></label>
+                <div class="pw-wrap">
+                  <input type="password" id="reg-password" autocomplete="new-password" placeholder="Min. 8 karakter" required />
+                  <button type="button" class="show-pw" data-toggle-pw="reg-password" aria-label="Tampilkan kata sandi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <div class="pw-meter" aria-hidden="true"><i id="pw-bar"></i></div>
+                <div class="hint" id="pw-hint">Gunakan huruf dan angka.</div>
+                <div class="error-msg" id="reg-password-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="reg-password2">Ulangi kata sandi <span class="req">*</span></label>
+                <input type="password" id="reg-password2" autocomplete="new-password" placeholder="Ketik ulang" required />
+                <div class="error-msg" id="reg-password2-error"></div>
+              </div>
+            </div>
+            <div class="hp-field" aria-hidden="true"><label for="reg-website">Jangan diisi</label><input type="text" id="reg-website" tabindex="-1" autocomplete="off" /></div>
+            <button type="submit" class="btn btn-accent btn-lg btn-block" id="btn-reg">Daftar &amp; Masuk</button>
+          </form>
+          <div class="auth-foot">Sudah punya akun? <button type="button" class="link-btn" data-go="masuk">Masuk</button></div>
+        </div>
+
+        <!-- ===== LUPA KATA SANDI ===== -->
+        <div class="auth-panel" id="panel-lupa" role="tabpanel" hidden>
+          <h1>Lupa kata sandi</h1>
+          <p class="sub">Kami kirim kode 8 karakter ke email Anda. Kode berlaku 30 menit.</p>
+          <div class="alert" id="lupa-alert" role="alert" hidden></div>
+
+          <form id="lupa-form-1" novalidate>
+            <div class="form-group">
+              <label for="lupa-email">Email akun</label>
+              <input type="email" id="lupa-email" autocomplete="email" placeholder="nama@email.com" required />
+              <div class="error-msg" id="lupa-email-error"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="btn-lupa-1">Kirim Kode</button>
+          </form>
+
+          <form id="lupa-form-2" novalidate hidden>
+            <div class="form-group">
+              <label for="lupa-kode">Kode dari email</label>
+              <input type="text" id="lupa-kode" autocomplete="one-time-code" placeholder="MIS. K7M2QX9P" maxlength="12" style="letter-spacing:0.18em;text-transform:uppercase;font-weight:800;" required />
+              <div class="error-msg" id="lupa-kode-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="lupa-password">Kata sandi baru</label>
+              <div class="pw-wrap">
+                <input type="password" id="lupa-password" autocomplete="new-password" placeholder="Min. 8 karakter, huruf &amp; angka" required />
+                <button type="button" class="show-pw" data-toggle-pw="lupa-password" aria-label="Tampilkan kata sandi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+              </div>
+              <div class="error-msg" id="lupa-password-error"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="btn-lupa-2">Atur Ulang Kata Sandi</button>
+            <p class="hint" style="margin-top:12px;text-align:center;">Tidak menerima email? Cek folder spam, atau <button type="button" class="link-btn" id="lupa-ulang">kirim ulang kode</button>.</p>
+          </form>
+          <div class="auth-foot">Ingat kata sandi? <button type="button" class="link-btn" data-go="masuk">Kembali masuk</button><br/><span style="font-size:0.78rem;">Akun administrator tidak dapat diatur ulang lewat email — hubungi pengelola sistem.</span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

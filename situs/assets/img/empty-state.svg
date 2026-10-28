@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="150" viewBox="0 0 220 150" role="img" aria-label="Ilustrasi buku terbuka">
+  <circle cx="110" cy="62" r="46" fill="#f6dca0"/>
+  <circle cx="110" cy="62" r="30" fill="#e0a43a" opacity="0.85"/>
+  <path d="M20 118 C 60 98 90 100 110 112 C 130 100 165 98 200 118 L200 126 L20 126 Z" fill="#dcebe4"/>
+  <path d="M110 108 C 96 98 70 98 52 104 V 134 C 70 128 96 128 110 138 C 124 128 150 128 168 134 V 104 C 150 98 124 98 110 108 Z" fill="#2f5d50"/>
+  <path d="M110 108 V138" stroke="#fff" stroke-opacity="0.5" stroke-width="2"/>
+  <path d="M60 112 C 76 108 94 109 104 114 M60 121 C 76 117 94 118 104 123 M160 112 C 144 108 126 109 116 114 M160 121 C 144 117 126 118 116 123" fill="none" stroke="#a9c7bb" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#b4532f"><path d="M28 40 l5 6 -5 6 -5 -6z"/><path d="M192 34 l4 5 -4 5 -4 -5z" fill="#2f5d50"/><path d="M180 64 l3 4 -3 4 -3 -4z"/></g>
+  <rect x="20" y="140" width="180" height="4" rx="2" fill="#b4532f" opacity="0.75"/>
+</svg>

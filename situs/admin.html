@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard Administrator Perpustakaan Digital NTT." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#2f5d50" />
+  <title>Dashboard Admin — POPCORN RIDA Pondok Pustaka Corner Riset dan Inovasi Daerah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,600&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/admin.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <script src="assets/js/theme.js"></script>
+</head>
+<body class="admin-body">
+
+  <!-- ============== LOGIN VIEW ============== -->
+  <div id="login-view" class="login-wrap">
+    <div class="login-card">
+      <div class="login-brand">
+        <span class="brand-logo has-img"><img src="assets/img/logo.svg" alt="" width="48" height="48" /></span>
+        <h1>Dashboard Admin</h1>
+        <p>POPCORN RIDA Pondok Pustaka Corner Riset dan Inovasi Daerah</p>
+      </div>
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="login-email">Email Administrator <span style="color:var(--c-danger);">*</span></label>
+          <input type="email" id="login-email" name="email" required autocomplete="username" placeholder="admin@nttprov.go.id" />
+          <div class="error-msg" id="login-email-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Kata Sandi <span style="color:var(--c-danger);">*</span></label>
+          <div class="pw-wrap">
+            <input type="password" id="login-password" name="password" required autocomplete="current-password" placeholder="••••••••" />
+            <button type="button" class="show-pw" id="toggle-pw" aria-label="Tampilkan kata sandi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="error-msg" id="login-password-error"></div>
+        </div>
+        <div class="login-actions">
+          <button type="submit" class="btn btn-primary btn-block" id="btn-login">
+            Masuk ke Dashboard
+          </button>
+        </div>
+      </form>
+      <div class="login-meta">
+        Akses dashboard hanya untuk administrator resmi.<br/>
+        Aktivitas login tercatat dalam log sistem.<br/>
+        <span style="display:inline-block;margin-top:8px;">Anggota biasa? <a href="masuk.html"><strong>Masuk di sini</strong></a> · <a href="index.html">Kembali ke situs</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== ADMIN SHELL ============== -->
+  <div id="admin-shell" class="admin-shell" hidden>
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <div class="as-brand">
+        <span class="brand-logo has-img"><img src="assets/img/logo.svg" alt="" width="48" height="48" /></span>
+        <div>
+          <div class="brand-title">POPCORN RIDA (Pondok Pustaka Corner Riset dan Inovasi Daerah)</div>
+          <div class="brand-sub">Admin BAPPERIDA NTT</div>
+        </div>
+      </div>
+      <nav class="admin-nav" id="admin-nav" aria-label="Navigasi admin">
+        <span class="nav-label">Utama</span>
+        <a href="#dashboard" class="active" data-view="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+          Dashboard
+        </a>
+        <a href="#koleksi" data-view="koleksi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          Koleksi
+        </a>
+        <a href="#kategori" data-view="kategori">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Kategori
+        </a>
+        <a href="#publikasi" data-view="publikasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.5 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.5-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          Publikasi Pilihan
+        </a>
+        <a href="#pesan" data-view="pesan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          Pesan Masuk
+        </a>
+        <a href="#anggota" data-view="anggota">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          Anggota
+        </a>
+        <span class="nav-label">Sistem</span>
+        <a href="#log" data-view="log">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Log Aktivitas
+        </a>
+        <a href="#instansi" data-view="instansi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7l9-4 9 4M5 21V11M19 21V11M9 21v-6h6v6"/></svg>
+          Info Instansi
+        </a>
+      </nav>
+      <div class="as-footer">
+        <div class="admin-user-card">
+          <span class="auc-avatar" id="auc-avatar">A</span>
+          <div class="auc-text">
+            <strong id="auc-name">Admin</strong>
+            <span id="auc-role">Administrator</span>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-block btn-sm" id="btn-logout" style="color:#cbd5e1;border-color:rgba(255,255,255,0.18);background:rgba(255,255,255,0.04);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          Keluar
+        </button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div class="at-left">
+          <button class="icon-btn admin-toggle-mobile" id="admin-toggle-mobile" aria-label="Buka menu admin">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+          <span class="at-title" id="at-title">Dashboard</span>
+        </div>
+        <div class="at-actions">
+          <a href="index.html" target="_blank" class="at-back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M19 7l-7 7-3-3"/></svg>
+            Lihat Situs Publik
+          </a>
+        </div>
+      </header>
+
+      <div class="admin-content" id="admin-content">
+        <!-- Konten dinamis dirender oleh admin.js -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal generik -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal-card" id="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="mc-header">
+        <h3 id="modal-title">Judul Modal</h3>
+        <button class="mc-close" id="modal-close" aria-label="Tutup">×</button>
+      </div>
+      <div class="mc-body" id="modal-body"></div>
+      <div class="mc-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- Loading & toast -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
